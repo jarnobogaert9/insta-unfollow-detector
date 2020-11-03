@@ -22,3 +22,4 @@ PASSWORD=
 ```
 python index.py
 ```
+> This will create a `followers.json` file where all your current followers will be listed and a `unfollowed.json` file where all the users that unfollowed you recently will be listed.
