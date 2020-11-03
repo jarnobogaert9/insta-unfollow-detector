@@ -70,9 +70,9 @@ class InstaBot:
             print('file is empty')
             self.write_to_file(filename, json.dumps([]))
 
-        pre_unfollowed = json.loads(self.read_file(filename))
-        pre_unfollowed.extend(unfollowed)
-        self.write_to_file(filename, json.dumps(pre_unfollowed))
+        prev_unfollowed = json.loads(self.read_file(filename))
+        prev_unfollowed.extend(unfollowed)
+        self.write_to_file(filename, json.dumps(prev_unfollowed))
         
     
     def is_file_empty(self, filename):
