@@ -40,32 +40,26 @@ class InstaBot:
 
     def write_followers(self, followers, filename='followers.json'):
         print('Writing followers to file...')
-        f = open(filename, "w")
-        f.write(json.dumps(followers))
-        f.close()
+        self.write_to_file(filename, json.dumps(followers))
 
     def read_followers(self, filename='followers.json'):
         is_file = os.path.isfile(filename)
         if not is_file:
             # Create file
-            f = open(filename, 'w')
-            f.write("[]")
-            f.close()
+            self.write_to_file(filename, '[]')
             return []
         if self.is_file_empty(filename):
             print('file is empty')
             self.write_to_file(filename, json.dumps([]))
-        with open(filename) as json_file:
-            arr = json.load(json_file)
+            
+        arr = json.loads(self.read_file(filename))
         return arr
 
     def write_unfollowed(self, unfollowed, filename='unfollowed.json'):
         is_file = os.path.isfile(filename)
         if not is_file:
             # Create file
-            f = open(filename, 'w')
-            f.write("[]")
-            f.close()
+            self.write_to_file(filename, '[]')
         if self.is_file_empty(filename):
             print('file is empty')
             self.write_to_file(filename, json.dumps([]))
