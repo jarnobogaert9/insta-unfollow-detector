@@ -8,7 +8,7 @@ Ever wondered who followed you and unfollowed you after a while? This python scr
 
 1. Install all dependencies (can be done in a virtual environment)
 ```
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 2. Create a .env file with listed values.
@@ -20,6 +20,6 @@ PASSWORD=
 
 3. Execute script
 ```
-python index.py
+$ python index.py
 ```
 > This will create a `followers.json` file where all your current followers will be listed and a `unfollowed.json` file where all the users that unfollowed you recently will be listed.
