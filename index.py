@@ -4,10 +4,10 @@ from datetime import datetime
 import uuid
 import json
 from InstaBot import InstaBot
-from mongo import MongoClient
+# from mongo import MongoClient
 
 instaBot = InstaBot()
-db = MongoClient()
+# db = MongoClient()
 
 prev_followers = instaBot.read_followers()
 now_followers = instaBot.get_followers()
@@ -36,15 +36,15 @@ instaBot.write_unfollowed(unfollowed)
 instaBot.write_followers(now_followers_to_write)
 
 # Write amount of followers to db
-amount_of_followers = len(now_followers)
+# amount_of_followers = len(now_followers)
 
-now = datetime.now()
-# dd/mm/YY H:M:S
-dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+# now = datetime.now()
+# # dd/mm/YY H:M:S
+# dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-obj = {
-    'amountOfFollowers': amount_of_followers,
-    'createdAt': dt_string
-}
+# obj = {
+#     'amountOfFollowers': amount_of_followers,
+#     'createdAt': dt_string
+# }
 
 db.insert_one(data=obj, coll='amounts')
