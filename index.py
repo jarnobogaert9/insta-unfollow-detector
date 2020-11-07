@@ -47,4 +47,4 @@ instaBot.write_followers(now_followers_to_write)
 #     'createdAt': dt_string
 # }
 
-db.insert_one(data=obj, coll='amounts')
+# db.insert_one(data=obj, coll='amounts')
