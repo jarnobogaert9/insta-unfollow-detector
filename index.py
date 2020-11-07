@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from instagram_private_api import Client, ClientCompatPatch
 from datetime import datetime
 import uuid
